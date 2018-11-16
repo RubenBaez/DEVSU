@@ -1,0 +1,25 @@
+image: devsu_test
+
+before_script:
+- mkdir -p $HOME/.m2/
+
+stages:
+- test
+- build
+
+myapplication_test:
+stage: test
+script:
+- python test_app.py
+
+myapplication_build:
+stage: build
+script:
+- docker build -t rubendario/devsu_test .
+
+myapplication_build:
+stage: build
+script:
+- docker push rubendario/devsu_test
+
+
