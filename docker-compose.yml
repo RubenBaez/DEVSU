@@ -3,25 +3,25 @@
 ######################
 python:
     restart: always
-    build: ./servicio1/
-    expose:
-        - "8000"
-    volumes:
-        - /usr/src/app
-    #dockerfile: Dockerfile
-    #command: /usr/local/bin/gunicorn -w 2 -b :8000 app:app
-    command: gunicorn -w 2 -b :8000 app:app
-
-
-service:
-    restart: always
-    build: ./servicio2/
+    build: ./app/
     expose:
         - "8001"
     volumes:
         - /usr/src/app
     #dockerfile: Dockerfile
-    command: /usr/local/bin/gunicorn -w 2 -b :8001 app:app
+    #command: /usr/local/bin/gunicorn -w 2 -b :8000 app:app
+    command: gunicorn -w 2 -b :8001 app:app
+
+#not using
+service:
+    restart: always
+    build: ./servicio2/
+    expose:
+        - "8002"
+    volumes:
+        - /usr/src/app
+    dockerfile: Dockerfile
+    command: /usr/local/bin/gunicorn -w 2 -b :8002 app:app
 
      
 #####################
@@ -35,6 +35,6 @@ nginx:
     volumes:
         - /www/static
     links:
-        - python:python
+	- python:python
         - service:service
 
