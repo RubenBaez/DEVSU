@@ -8,13 +8,13 @@ pipeline{
 		}
 	}
 	
-	stage('Virtualenv'){
-		steps{
-		sh '''
-			bash -c "virtualenv entorno && source entorno/bin/activate"
-		'''
-		}
-	}
+	#stage('Virtualenv'){
+	#	steps{
+	#	sh '''
+	#		bash -c "virtualenv entorno && source entorno/bin/activate"
+	#	'''
+	#	}
+	#}
 	stage('InstallRequirements'){
 		steps{
 		sh '''
