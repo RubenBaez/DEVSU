@@ -25,7 +25,7 @@ pipeline{
 	stage('TestApp'){
 		steps{
 		sh '''
-			bash -c "python test_app.py"
+			bash -c "python test_app.py &"
 		'''
 		}
 	}
