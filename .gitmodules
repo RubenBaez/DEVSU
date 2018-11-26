@@ -1,0 +1,3 @@
+[submodule "jobdsl-devpy"]
+	path = jobdsl-devpy
+	url = https://github.com/RubenBaez/jobdsl-devpy.git
