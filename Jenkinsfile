@@ -39,7 +39,7 @@ pipeline{
 	stage('BuildDocker'){
 		steps{
 		sh '''
-			Docker build -t appd:latest .
+			docker build -t appd:latest .
 		'''		
 		}
 	}
