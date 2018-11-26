@@ -32,7 +32,7 @@ pipeline{
 	stage('RunApp'){
 		steps{
 		sh '''
-			bash -c "python app.py"
+			bash -c "python app.py &"
 		'''
 		}
 	}
