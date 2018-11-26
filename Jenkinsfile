@@ -48,7 +48,7 @@ pipeline{
 		sh '''
 			docker tag appd:latest rubendario/devsu:latest
 					docker push rubendario/devsu:latest
-					docker rmi devsu:latest
+					docker rmi appd:latest
 		'''
 		}
 	}
